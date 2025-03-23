@@ -10,24 +10,6 @@ const path = require("path");
 const admin = require("firebase-admin");
 const { use } = require("react");
 
-const serviceAccount = {
-    "type": "service_account",
-    "project_id": "exam-proctor-58e4c",
-    "private_key_id": "2c2826fc905f03ab538a9ec53c02a70b74dcebc1",
-    "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQDflUmJFHiiV9iP\nCmyJJGf6uh/dITaJg+EKJmdYfSlw9RIC1PnDirmFAX4sWchT96CstjdKcdnrSnOA\nl1VMI/WwEYUA9QjM60pkMcbnIGAGxaYm+yfHscD2wVOVuIT1wFxtjL62ldukmaAS\nw9TV8Rc+0c2WUjzeP+L2gi1CSgMLhCZ2y0vjx/EHra2m9tjByrk+SYq8QDOgQm8V\nhzhHMPQcQ8gi20AwQ1oeuWl3vgq3QVpkYDrJfWrcyirgrBWEiR3VYSBKx+fnAo45\nT+9k2seV8MQH2dx1bAsvCEUK7WUJbbgNKmo3K7RzqIbHj62stxlURHGeTGbh8EHL\nmOuf9D6PAgMBAAECggEAD5LhhWfko0JFNml+d+sORxux3oBSwS9rfH6CUlqdiV24\nvHPDVgiStZ4OAN7cImUsTvt+THQzvrz34Kwp59zVX0dJIXDwBP4at3H0LeNGbRJV\naX+zHKjYDRgYT2SD9m5IweS84BD+NK/yw3valnBtsxWAIYlm7gA7OfqFVom7PpD7\nlBUidZ0JWdr2tcChMFyJQXtDuKYc5qVzayXjle18Qx9YbjROneOcz1m1KEOEnBH5\ni02lnqfdFutGnoxYsaCRFx0pUSPa7k0pJmcXSeASWCqFoznCPPpTfZDIBhp0DcuJ\nVz0+m3nnYV6LvDEOLqBsSgLB1nAXyW3csdZAPszpKQKBgQD6IExXW+QsckYycFmD\nlmaTdjuA4eWIJb5Werukdqw6PnTUuPeyBoC/TfB5RtJVX8IaLXqTlHDc/4vPbFz0\nIEynxLzF7H9JVKz6ANYZfLOyafEMlCJj1CLeH5xvxMx2II6h0EO2QQmCOyi/zSnV\nVVstdFVxQR5mJX3WgFAUWaaSQwKBgQDk1WshA/bkjfvySOCTFMAxyAaRkZK3xfp5\nlmdhISfnphaIVAhov12fo/LpsAN+LutWICynPw9fVLomMHSiNMdiZjRIhLAjE8JY\nvtPNqkcJC6YdFMDBGUNRSxLqQP+rbs+Ln5+MKT+zoqkZ/VNfyh5Z/UKfnfRltHKG\nOpN6Lkr7xQKBgG7i7rUz2b4Skyg9QpHhlWv+WHbUrqtjADTaiGFq8wOHOMgtkDHu\nTBmDdf5t9UVABI8SZmsSvc5bxCGaysK3pwQhZgbgx7U8wsq6oDAAZrHL4b9P1Mco\n/qQ2o2Wxe2tLF7CI4dvkjVCc5X3SeJ9JDfjiwBZLZiymplj33YiIDh59AoGADmOh\nJeVS7BJFinmsrXL7luXGC/dEa4vmcSjU/VWRZc6a0h2+nZ+S6ovrpWgtAA1BPRwu\n0qFzfQId5nLbkquQ8g4NMZYuYTZH3T66oM8ZQmdaHbAFYt8MzZrT6KkHqqcAI/54\nkN6zI7+RtJGqYXabK/tx6gmLqa2MGgaq6V7p1iUCgYAMltRQOwAyxozHkITYttUM\nNnTF/4lCooLQc5VBLO5F9GWB/LFHrOUZgprTTTYWaMnjXDHaMQeKVbhpMgqNpBcn\nRo++LE+YRIqMrO2HzHNXQJgNc/QEJ+c8HhLlMtet98QoI2T68HPHVN+gS+U0A6JI\npqEB0MrrYNteDDGI0qphrA==\n-----END PRIVATE KEY-----\n",
-    "client_email": "firebase-adminsdk-fbsvc@exam-proctor-58e4c.iam.gserviceaccount.com",
-    "client_id": "102471608456980884848",
-    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
-    "token_uri": "https://oauth2.googleapis.com/token",
-    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
-    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-fbsvc%40exam-proctor-58e4c.iam.gserviceaccount.com",
-    "universe_domain": "googleapis.com"
-  }
-
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount)
-});
-
 const db = admin.firestore();
 
 const app = express();
